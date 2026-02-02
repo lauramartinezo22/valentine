@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will you be my Valentine?</title>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe6eb;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+
+  h1 {
+    color: #e6005c;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px;
+  }
+
+  #yes {
+    background-color: #ff4d79;
+    color: white;
+  }
+
+  #no {
+    background-color: #999;
+    color: white;
+    position: absolute;
+  }
+
+  #final {
+    display: none;
+    margin-top: 20px;
+  }
+
+  #final img {
+    width: 260px;
+    border-radius: 12px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="card">
+  <h1>💖 Will you be my Valentine? 💖</h1>
+  <p id="text">Be honest 😌</p>
+
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+
+  <div id="final">
+    <h2>You had no choice 😈💘</h2>
+    <img src="https://media.giphy.com/media/I0MYt5jPR6QX5pnqM/giphy.gif">
+  </div>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const text = document.getElementById("text");
+  const final = document.getElementById("final");
+
+  const messages = [
+    "Are you sure?",
+    "Think again 😏",
+    "Nice try",
+    "Last chance 😈",
+    "You can't escape"
+  ];
+
+  let count = 0;
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    text.textContent = messages[count % messages.length];
+    count++;
+  });
+
+  yesBtn.addEventListener("click", () => {
+    noBtn.style.display = "none";
+    yesBtn.style.display = "none";
+    text.style.display = "none";
+    final.style.display = "block";
+  });
+</script>
+
+</body>
+</html>
