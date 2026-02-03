@@ -71,7 +71,8 @@
     .kid-img {
       width: 200px;
       border-radius: 15px;
-      margin: 20px 0;
+      margin: 20px auto;
+      display: block;
     }
 
     .letter {
@@ -87,7 +88,7 @@
     .us-img {
       width: 100%;
       border-radius: 18px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     @keyframes fadeIn {
@@ -101,7 +102,7 @@
 
   <div class="container">
 
-    <!-- PREGUNTA INICIAL -->
+    <!-- PREGUNTA -->
     <h1 id="question">
       Hey handsome 😏 any chance you’re free to be my Valentine? 💖
     </h1>
@@ -111,7 +112,7 @@
     <button id="yes">Yes</button>
     <button id="no">No</button>
 
-    <!-- RESULTADO FINAL -->
+    <!-- FINAL -->
     <div id="final">
       <h2>You had no choice 😈 but I’m really glad you said yes 💘</h2>
 
@@ -130,16 +131,19 @@
             “Being connected to you feels so comforting, and home is whenever I am with you.”
           </em>
         </p>
+
         <p>
           I can’t wait for the day distance is no longer part of our story.
         </p>
+
         <p>
-          Te amo mucho mi amor 💖 Tu novia.
+          Te amo mucho mi amor 💖  
+          — Tu novia
         </p>
       </div>
 
       <!-- FOTO DE USTEDES -->
-      <img src="us.jpg" alt="Cute kid" class="kid-img">
+      <img src="us.jpg" alt="Us together" class="us-img">
     </div>
 
   </div>
@@ -164,6 +168,7 @@
 
     let count = 0;
 
+    // NO HUYE
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * (window.innerWidth - 150);
       const y = Math.random() * (window.innerHeight - 100);
@@ -174,6 +179,7 @@
       count++;
     });
 
+    // YES CRECE Y NECESITA 2 CLICKS
     yesBtn.addEventListener("click", () => {
       yesClicks++;
       scale += 0.4;
@@ -184,7 +190,6 @@
         return;
       }
 
-      // MOSTRAR FINAL
       question.style.display = "none";
       noBtn.style.display = "none";
       yesBtn.style.display = "none";
