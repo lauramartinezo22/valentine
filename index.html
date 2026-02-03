@@ -1,116 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Will you be my Valentine 💖</title>
+  <meta charset="UTF-8">
+  <title>Hey handsome 😏 any chance you’re free to be my Valentine? 💖</title>
 
-<style>
-  body {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ffe6eb;
-    font-family: Arial, sans-serif;
-  }
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6eb;
+      font-family: Arial, sans-serif;
+    }
 
-  .container {
-    text-align: center;
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-  }
+    .container {
+      position: relative;
+      text-align: center;
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      max-width: 480px;
+    }
 
-  h1 {
-    color: #e6005c;
-  }
+    h1 {
+      color: #e6005c;
+      font-size: 24px;
+    }
 
-  p {
-    font-size: 18px;
-  }
+    p {
+      font-size: 18px;
+    }
 
-  button {
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 15px;
-  }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 15px;
+    }
 
-  #yes {
-    background-color: #ff4d79;
-    color: white;
-  }
+    #yes {
+      background-color: #ff4d79;
+      color: white;
+    }
 
-  #no {
-    background-color: #999;
-    color: white;
-    position: absolute;
-  }
+    #no {
+      background-color: #999;
+      color: white;
+      position: absolute;
+    }
 
-  #final {
-    display: none;
-    margin-top: 20px;
-  }
+    #final {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.6s ease forwards;
+    }
 
-  #final img {
-    width: 260px;
-    border-radius: 12px;
-  }
-</style>
+    #final img {
+      width: 240px;
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    .letter {
+      background: #fff5f9;
+      padding: 18px;
+      border-radius: 14px;
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container" id="card">
-  <h1>💖 Will you be my Valentine? 💖</h1>
-  <p id="text">Be honest 😌</p>
+  <div class="container">
+    <h1>
+      Hey handsome 😏 any chance you’re free to be my Valentine? 💖<br>
+      Distance doesn’t stand a chance 😉
+    </h1>
 
-  <button id="yes">Yes</button>
-  <button id="no">No</button>
+    <p id="text">Be honest 😌</p>
 
-  <div id="final">
-    <h2>You had no choice 😈💘</h2>
-    <img src="https://media.giphy.com/media/I0MYt5jPR6QX5pnqM/giphy.gif">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+
+    <div id="final">
+      <h2>You had no choice 😈💘 but I’m really glad you said yes 🥰</h2>
+
+      <div class="letter">
+        <p>
+          I know we’re not in the same place right now, but I wanted you to know
+          that you mean a lot to me.
+        </p>
+
+        <p>
+          Distance doesn’t change how much I smile when I think of you.
+          If anything, it’s made me realize how special what we have is.
+        </p>
+
+        <p>
+          <em>“Home is whenever I am with you”</em> has never felt more true to me.
+          No matter how far apart we are, you feel like home, and my heart always
+          finds its way back to you.
+        </p>
+
+        <p>
+          I can’t wait for the day distance is no longer part of our story. 💖
+        </p>
+      </div>
+
+      <img src="https://i.giphy.com/I0MYt5jPR6QX5pnqM.gif" alt="Valentine gif">
+    </div>
   </div>
-</div>
 
-<script>
-  const noBtn = document.getElementById("no");
-  const yesBtn = document.getElementById("yes");
-  const text = document.getElementById("text");
-  const final = document.getElementById("final");
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const text = document.getElementById("text");
+    const finalDiv = document.getElementById("final");
 
-  const messages = [
-    "Are you sure?",
-    "Think again 😏",
-    "Nice try",
-    "Last chance 😈",
-    "You can't escape"
-  ];
+    const messages = [
+      "Are you sure?",
+      "Think again 😏",
+      "Nice try",
+      "Last chance 😈",
+      "You can't escape 💀"
+    ];
 
-  let count = 0;
+    let count = 0;
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 60);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 140);
+      const y = Math.random() * (window.innerHeight - 80);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
 
-    text.textContent = messages[count % messages.length];
-    count++;
-  });
+      text.textContent = messages[count % messages.length];
+      count++;
+    });
 
-  yesBtn.addEventListener("click", () => {
-    noBtn.style.display = "none";
-    yesBtn.style.display = "none";
-    text.style.display = "none";
-    final.style.display = "block";
-  });
-</script>
+    yesBtn.addEventListener("click", () => {
+      noBtn.style.display = "none";
+      yesBtn.style.display = "none";
+      text.style.display = "none";
+      finalDiv.style.display = "block";
+    });
+  </script>
 
 </body>
 </html>
